@@ -1,0 +1,10 @@
+<p>data works!</p>
+<!-- <div *ngFor="let item of items; index as i">{{ i }} == {{ item }}</div> -->
+<div *ngFor="let item of arrData">
+  <!-- <h2>{{ item }}</h2>
+  <button>Add</button> -->
+  <app-course name="{{ item }}" (dataPass)="Onrecieve($event)"></app-course>
+</div>
+
+<h2>Show from Child</h2>
+{{ something | json }}

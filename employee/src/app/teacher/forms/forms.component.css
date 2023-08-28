@@ -1,0 +1,11 @@
+.row {
+  width: auto;
+  background-color: rgb(60, 103, 178);
+  height: 100vh;
+}
+form {
+  position: center;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: bisque;
+}

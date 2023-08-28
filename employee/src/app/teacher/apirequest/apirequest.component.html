@@ -1,0 +1,88 @@
+<p>apirequest works!</p>
+
+<!-- <div *ngFor="let item of data">
+  <h6>{{ item.id }}</h6>
+  <h6>{{ item.title }}</h6>
+  <h6>{{ item.body }}</h6>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div *ngIf="alert">
+      <div class="alert alert-primary" role="alert">Data is updated</div>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]="dataForApi" (ngSubmit)="ApiFormData()">
+  <div class="container">
+    <div class="row col-3 offset-4">
+      <label for="userId">User ID:</label><br />
+      <input
+        formControlName="userId"
+        type="text"
+        id="userId"
+        name="userId"
+        placeholder="Enter User ID"
+      /><br />
+    </div>
+    <div class="row col-3 offset-4">
+      <label for="title">Title:</label><br />
+      <input
+        formControlName="title"
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Enter title"
+      /><br />
+    </div>
+    <div class="row col-3 offset-4">
+      <label for="body">Body:</label><br />
+      <textarea
+        placeholder="Enter Body"
+        formControlName="body"
+        id="body"
+        name="body"
+      ></textarea
+      ><br /><br />
+    </div>
+    <div class="row col-3 offset-4 mt-3">
+      <button class="btn btn-primary" type="submit" value="Submit">
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- <div class="row">
+  <ng-container *ngIf="!isloading">
+    <div class="col-3 mt-3" *ngFor="let item of data">
+      <div class="card">
+        <div class="card-body">
+          <h5>{{ item.userId }}</h5>
+          <h6>{{ item.title }}</h6>
+          <h6>{{ item.body }}</h6>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div class="row">
+  <ng-container *ngIf="!isloading">
+    <div class="col-3 mt-3" *ngFor="let item of data">
+      <div class="card">
+        <div class="card-body" (click)="selectdata(item)">
+          <h5>{{ item.userId }}</h5>
+          <h6>{{ item.title }}</h6>
+          <h6>{{ item.body }}</h6>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-danger" (click)="deletedata(item.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

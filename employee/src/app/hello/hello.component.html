@@ -1,0 +1,25 @@
+<!-- <p>hello works!</p> -->
+<!-- <app-home name="jion"></app-home> -->
+<app-home name="{{ nameOfParent }}"></app-home>
+
+<input
+  (keyup)="onchange($event)"
+  placeholder="Enter Name"
+  id="name"
+  [(ngModel)]="nameOfParent"
+/>
+<button (click)="onsubmit()">Add</button>
+
+<!-- <input
+  (keyup)="onchange($event)"
+  placeholder="Enter Name"
+  id="name"
+/>
+<button (click)="onsubmit()">Add</button> -->
+
+<p>your name is : {{ nameOfParent }}</p>
+
+<input placeholder="Enter Email" id="email" [(ngModel)]="email" />
+<p>Phone : {{ email }}</p>
+<!-- <app-home name="{{ var2 }}"></app-home> -->
+<app-home name="{{ nameOfParent }}" [email]="email"></app-home>
